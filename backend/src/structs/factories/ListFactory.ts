@@ -1,17 +1,5 @@
-import { Entity, List } from "../../types";
-import {
-  Account, 
-  Bank, 
-  CapitalAsset, 
-  Company, 
-  Dp,
-  FinancialYear,
-  GenericInfo,
-  Journal,
-  Tax,
-  Contact
-} from '../../types/fieldsTypes'
-
+import {CapitalAsset, Company, Dp, FinancialYear,
+   Entity, List, Account, Bank , Contact, Tax, Journal, GenericInfo} from "../../types";
 
 export namespace ListFactory {
   export function create<E extends Entity>(items?: E[]): List<E> {
