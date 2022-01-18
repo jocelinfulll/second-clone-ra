@@ -1,0 +1,424 @@
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 99,
+  channel: 'message_inserted',
+  payload: '{"type": "save_pivot_file", "message_id": "453b1ad0-7b18-4955-afec-b1a02d66df70", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+::1 - POST /pivotfile/upload HTTP/1.1 200 2 - 310.858 ms
+notification NotificationResponseMessage {
+  length: 173,
+  processId: 100,
+  channel: 'message_inserted',
+  payload: '{"type": "pivot_file_saved", "message_id": "aa0b9f2f-d84a-400e-955f-b671d30ed093", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+1
+2
+8
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 99,
+  channel: 'message_inserted',
+  payload: '{"type": "save_account_list_bulk", "message_id": "b2943879-af1d-4656-a237-42701e6255e7", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 100,
+  channel: 'message_inserted',
+  payload: '{"type": "save_account_list_bulk", "message_id": "c1269c07-48bc-45ec-bab3-6887174f624e", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 107,
+  channel: 'message_inserted',
+  payload: '{"type": "save_account_list_bulk", "message_id": "68205262-fe4a-415d-87ca-5738c6ce98cb", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 106,
+  channel: 'message_inserted',
+  payload: '{"type": "save_account_list_bulk", "message_id": "540e36ec-cd90-4d5a-aeba-8f4d878843e9", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 101,
+  channel: 'message_inserted',
+  payload: '{"type": "save_account_list_bulk", "message_id": "ceaf8590-b510-459a-a50c-e1e151c06a96", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 102,
+  channel: 'message_inserted',
+  payload: '{"type": "save_account_list_bulk", "message_id": "fde34ade-8506-4fe2-ad34-e95459d8e361", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 110,
+  channel: 'message_inserted',
+  payload: '{"type": "save_account_list_bulk", "message_id": "a421737d-7339-4b88-aac5-7f4b422957b1", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 112,
+  channel: 'message_inserted',
+  payload: '{"type": "save_account_list_bulk", "message_id": "a64db095-0e9a-4509-b7ac-bb6ceab928c2", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 104,
+  channel: 'message_inserted',
+  payload: '{"type": "save_account_list_bulk", "message_id": "84265c43-50a3-4664-a36e-b6bd506eed65", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 109,
+  channel: 'message_inserted',
+  payload: '{"type": "save_account_list_bulk", "message_id": "bd6a3895-d3a8-458a-ba7a-9ec84aa84709", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 103,
+  channel: 'message_inserted',
+  payload: '{"type": "save_account_list_bulk", "message_id": "c4e1a98a-9ece-47ae-9122-a691b784208e", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 105,
+  channel: 'message_inserted',
+  payload: '{"type": "save_account_list_bulk", "message_id": "0e6b6815-3575-4bc5-8819-19f8975685e9", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 111,
+  channel: 'message_inserted',
+  payload: '{"type": "save_account_list_bulk", "message_id": "32654e0f-6066-41ad-8ac4-7904e737825b", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 108,
+  channel: 'message_inserted',
+  payload: '{"type": "save_account_list_bulk", "message_id": "d405b66f-0f2c-42be-94cc-cfde9cc9dd70", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 100,
+  channel: 'message_inserted',
+  payload: '{"type": "account_list_bulk_saved", "message_id": "96cc67b9-7580-45b5-b8c9-56c0eb08853d", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 113,
+  channel: 'message_inserted',
+  payload: '{"type": "account_list_bulk_saved", "message_id": "edd06606-8af3-4fd9-9daa-8d189edc3cc3", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 107,
+  channel: 'message_inserted',
+  payload: '{"type": "account_list_bulk_saved", "message_id": "f9aee20f-96a1-43a4-ba70-3d12047e5e2a", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 99,
+  channel: 'message_inserted',
+  payload: '{"type": "account_list_bulk_saved", "message_id": "c8fd09b7-317f-4e51-ac87-99a92eaf192a", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 112,
+  channel: 'message_inserted',
+  payload: '{"type": "account_list_bulk_saved", "message_id": "bb431f8d-13cd-4ef2-8777-ae0e6382240f", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 110,
+  channel: 'message_inserted',
+  payload: '{"type": "account_list_bulk_saved", "message_id": "5ec00197-c9cb-47bc-a14c-db243753513d", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 184,
+  processId: 111,
+  channel: 'message_inserted',
+  payload: '{"type": "save_bank_list_bulk", "message_id": "04ae8bf8-366a-4097-bf49-6ba77fc43e6d", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 184,
+  processId: 108,
+  channel: 'message_inserted',
+  payload: '{"type": "save_bank_list_bulk", "message_id": "38b21f17-7bfd-443e-9d1c-cd43a606ad8e", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 184,
+  processId: 109,
+  channel: 'message_inserted',
+  payload: '{"type": "save_bank_list_bulk", "message_id": "e31f3881-22bb-4bca-bf87-ec4b272fde1e", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 184,
+  processId: 105,
+  channel: 'message_inserted',
+  payload: '{"type": "save_bank_list_bulk", "message_id": "c0cc15d9-6717-4e38-9eb0-b300d1d8c98a", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+2
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 104,
+  channel: 'message_inserted',
+  payload: '{"type": "account_list_bulk_saved", "message_id": "2f4fb172-11f8-48d8-8c29-59fa445109b5", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 118,
+  channel: 'message_inserted',
+  payload: '{"type": "account_list_bulk_saved", "message_id": "615763a5-0a09-44a5-bfd9-dccd0b287d22", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 103,
+  channel: 'message_inserted',
+  payload: '{"type": "account_list_bulk_saved", "message_id": "97c88030-4e35-4d64-9ed7-8a7aad42bef8", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 102,
+  channel: 'message_inserted',
+  payload: '{"type": "account_list_bulk_saved", "message_id": "1af13b3f-9c5c-4875-9c9d-3d731e4d114f", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+2
+2
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 114,
+  channel: 'message_inserted',
+  payload: '{"type": "account_list_bulk_saved", "message_id": "82239c39-9596-46cc-a180-95207e0f84a2", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 115,
+  channel: 'message_inserted',
+  payload: '{"type": "account_list_bulk_saved", "message_id": "a1cf2dcb-cbce-499b-aef4-20933d4c1368", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 117,
+  channel: 'message_inserted',
+  payload: '{"type": "account_list_bulk_saved", "message_id": "82793fbd-b869-4395-a5e2-cab64af095fb", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+2
+2
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 116,
+  channel: 'message_inserted',
+  payload: '{"type": "account_list_bulk_saved", "message_id": "1855f7b2-4a99-4b62-b9d9-984834f1df23", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+2
+2
+2
+notification NotificationResponseMessage {
+  length: 177,
+  processId: 111,
+  channel: 'message_inserted',
+  payload: '{"type": "bank_list_bulk_saved", "message_id": "bf9703c8-a352-453e-ae92-28bfa4c273c7", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+2
+notification NotificationResponseMessage {
+  length: 177,
+  processId: 112,
+  channel: 'message_inserted',
+  payload: '{"type": "bank_list_bulk_saved", "message_id": "1ac5fdfe-6eba-43e4-8ef1-64713b1eda13", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 102,
+  channel: 'message_inserted',
+  payload: '{"type": "save_company_list_bulk", "message_id": "9164ea19-025a-4d3d-b3fd-b5d9a939974b", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+2
+2
+2
+2
+2
+2
+notification NotificationResponseMessage {
+  length: 177,
+  processId: 110,
+  channel: 'message_inserted',
+  payload: '{"type": "bank_list_bulk_saved", "message_id": "7b8a8a26-b820-40f4-8042-a252c1e2a39b", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+2
+notification NotificationResponseMessage {
+  length: 177,
+  processId: 120,
+  channel: 'message_inserted',
+  payload: '{"type": "bank_list_bulk_saved", "message_id": "1a9aff4a-6099-4fd9-a1b1-7f840a48e4fe", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 164,
+  processId: 116,
+  channel: 'message_inserted',
+  payload: '{"type": "error_saved", "message_id": "467f97c2-8a63-49bd-a2cf-6803ee9bb765", "stream_name": "error-85e5df78-f1e1-402b-8927-2685af99ba0c"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 164,
+  processId: 100,
+  channel: 'message_inserted',
+  payload: '{"type": "error_saved", "message_id": "3ca3f692-023a-4220-bcf0-9cfd87137915", "stream_name": "error-793667f5-60f2-4479-8425-36d809b17b47"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 194,
+  processId: 102,
+  channel: 'message_inserted',
+  payload: '{"type": "save_financial_year_list_bulk", "message_id": "35562237-3cec-4dc5-9395-757ad9f9cfc3", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+2
+2
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 116,
+  channel: 'message_inserted',
+  payload: '{"type": "company_list_bulk_saved", "message_id": "f6a74e7d-3a06-46d4-8286-28dd954cd66a", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+2
+2
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 108,
+  channel: 'message_inserted',
+  payload: '{"type": "financial_year_list_bulk_saved", "message_id": "ceb1c049-7333-4edb-b1b6-6596053cd6a9", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 193,
+  processId: 102,
+  channel: 'message_inserted',
+  payload: '{"type": "save_capital_asset_list_bulk", "message_id": "a0354f49-079b-4f77-844e-7034f98fc8cc", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 193,
+  processId: 113,
+  channel: 'message_inserted',
+  payload: '{"type": "save_capital_asset_list_bulk", "message_id": "261e8d78-7f92-4526-86a1-46beec5c1baf", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 193,
+  processId: 106,
+  channel: 'message_inserted',
+  payload: '{"type": "save_capital_asset_list_bulk", "message_id": "f47e2358-7877-4e1e-9e4d-4f94f2c0047f", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+2
+2
+notification NotificationResponseMessage {
+  length: 186,
+  processId: 118,
+  channel: 'message_inserted',
+  payload: '{"type": "capital_asset_list_bulk_saved", "message_id": "97a035c4-b973-4b63-826b-950545e4dee7", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 187,
+  processId: 106,
+  channel: 'message_inserted',
+  payload: '{"type": "save_journal_list_bulk", "message_id": "9359134e-ba92-49ba-a318-445b0e042619", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 186,
+  processId: 111,
+  channel: 'message_inserted',
+  payload: '{"type": "capital_asset_list_bulk_saved", "message_id": "8369cccd-e245-432b-ad20-a01bfe2120e0", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 186,
+  processId: 119,
+  channel: 'message_inserted',
+  payload: '{"type": "capital_asset_list_bulk_saved", "message_id": "87e1691d-4e45-43b3-9bd6-1e67565150fe", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+2
+2
+2
+notification NotificationResponseMessage {
+  length: 180,
+  processId: 106,
+  channel: 'message_inserted',
+  payload: '{"type": "journal_list_bulk_saved", "message_id": "81316e90-6680-4d11-97eb-e0d03e6c283f", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 183,
+  processId: 119,
+  channel: 'message_inserted',
+  payload: '{"type": "save_tax_list_bulk", "message_id": "e114e69c-88be-4cc2-85ef-45a4679c9dde", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+2
+notification NotificationResponseMessage {
+  length: 176,
+  processId: 111,
+  channel: 'message_inserted',
+  payload: '{"type": "tax_list_bulk_saved", "message_id": "373a872f-e2f0-45f8-8f11-2cdd12329ce5", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+2
+notification NotificationResponseMessage {
+  length: 192,
+  processId: 119,
+  channel: 'message_inserted',
+  payload: '{"type": "save_generic_info_list_bulk", "message_id": "0d42b679-f7ae-45f3-bb85-068813e4074b", "stream_name": "pivotFile:command-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+notification NotificationResponseMessage {
+  length: 185,
+  processId: 106,
+  channel: 'message_inserted',
+  payload: '{"type": "generic_info_list_bulk_saved", "message_id": "f1d96519-0934-4e35-a518-cabae856df59", "stream_name": "pivotFile-254c6ffa-c997-454c-9aed-b7fad79a3db5"}',
+  name: 'notification'
+}
+2
