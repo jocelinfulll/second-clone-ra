@@ -1,4 +1,5 @@
 import { Message_store } from "../models";
+import {Objectid} from './'
 // objectId mongodb
 export const savePivotFile = async ({ message_id }) => {
   const {
@@ -8,7 +9,7 @@ export const savePivotFile = async ({ message_id }) => {
   const streamName = `pivotFile-${file_id}`;
   const args = { id: file_id, ...rest }
   console.log("rest", rest)
-  const id = new id
+  const id = new Objectid()
 
     await Message_store.create({
         id: uuidv4(),

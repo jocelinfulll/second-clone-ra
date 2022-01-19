@@ -3,7 +3,7 @@ import { Request, Response, NextFunction } from "express";
 import Busboy from "busboy";
 import { uploadFileToS3 } from "../../utils/uploadFileToS3";
 import { Message_store } from "../../models";
-import { v4 as uuidv4 } from "uuid";
+import { ObjectId} from "mongodb";
 import config from "../../config";
 
 export const restRouter = Router();
@@ -24,7 +24,7 @@ restRouter.post(
           contentStream: file,
           accessToken: ACCESS_TOKEN_FROM_REQ,
         });
-        const fileId = uuidv4();
+        const fileId = new ObjectId();
         const s3Key = `${pivotFilePath}/${fileName}`;
         await Message_store.create({
           id: fileId,
