@@ -1,5 +1,5 @@
 import { Message_store } from "../models";
-import { v4 as uuidv4 } from "uuid";
+// objectId mongodb
 export const savePivotFile = async ({ message_id }) => {
   const {
     meta_data,
@@ -8,27 +8,7 @@ export const savePivotFile = async ({ message_id }) => {
   const streamName = `pivotFile-${file_id}`;
   const args = { id: file_id, ...rest }
   console.log("rest", rest)
-  // const pivotFile = {
-  //   errors: [],
-  //   id: entityProps.id ?? uuidv4(),
-  //   createdAt: entityProps.createdAt ?? new Date().toISOString(),
-  //   equals:(b)=>{ return isEqual(this, b); }
-  //   name: name,
-  //   path: path,
-  //   type: type,
-  //   userId: userId,
-  //   recoveries: props.recoveries ?? RecoveryListFactory.create([])
-  //   accountList: accountList ?? AccountListFactory.create([]),
-  //   bankList: bankList ?? BankListFactory.create([]),
-  //   capitalAssetList: capitalAssetList ?? CapitalAssetListFactory.create([]),
-  //   companyList: companyList ?? CompanyListFactory.create([]),
-  //   dpList: dpList ?? DpListFactory.create([]),
-  //   financialYearList: financialYearList ?? FinancialYearListFactory.create([]),
-  //   genericInfoList: genericInfoList ?? GenericInfoListFactory.create([]),
-  //   journalList: journalList ?? JournalListFactory.create([]),
-  //   taxList: taxList ?? TaxListFactory.create([]),
-  //   contactList: contactList ?? ContactListFactory.create([]),
-  // };
+  const id = new id
 
     await Message_store.create({
         id: uuidv4(),

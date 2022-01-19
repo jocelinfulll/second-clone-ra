@@ -27,7 +27,7 @@ restRouter.post(
         const fileId = uuidv4();
         const s3Key = `${pivotFilePath}/${fileName}`;
         await Message_store.create({
-          id: uuidv4(),
+          id: fileId,
           stream_name: `pivotFile:command-${fileId}`,
           type: "save_pivot_file",
           //TODO:remove the hardcrypted
