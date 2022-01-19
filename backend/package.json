@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --legacy-watch src/index.ts"
+    "start": "nodemon --legacy-watch src/index.ts",
+    "xml":"nodemon --legacy-watch src/xml/index.ts"
   },
   "dependencies": {
     "@graphql-tools/schema": "^8.3.1",
