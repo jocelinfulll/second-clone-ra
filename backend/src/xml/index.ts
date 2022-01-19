@@ -1,70 +1,97 @@
 // -> fs -> parsing
-// -> parsing ->  [account] -> event bulk insert avec data:[{fields}] 
+// -> parsing ->  [account] -> event bulk insert avec data:[{fields}]
 // -> event -> pubsub mongo -> insert dans la db -> creeer un message de validation saved
 
-import fs from 'fs';
-import { XMLParser } from 'fast-xml-parser';
-import {ObjectId} from 'mongodb';
-import {chunk as _chunk, get as _get} from 'lodash'
-import { Message_store } from "../models";
+import fs from "fs";
+import { XMLParser } from "fast-xml-parser";
+import { ObjectId } from "mongodb";
+import { chunk as _chunk, get as _get, once as _once } from "lodash";
+import {
+  Message_store,
+  Account,
+  Bank,
+  Contact,
+  Company,
+  Financial_Year,
+  Capital_Asset,
+  Journal,
+  Tax,
+} from "../models";
+import { initDatabase } from "../connectors/mongodb/index";
+import { adapters } from "./tables";
 
-const xml = fs.readFileSync('./littlexml.xml');
+(async () => await initDatabase())();
+const xml = fs.readFileSync("./littlexml.xml");
 
 const parser = new XMLParser();
 
-const jsonXML = parser.parse(xml)
-const practiceTransfer = jsonXML.practiceTransfer
-const tuple = [["account", 'accounts.account']]
-const accountData = _get(practiceTransfer, tuple[0][1] , undefined);
-console.log(accountData)
-const bulkSize = 50;
-const messagesBulks = _chunk(
-    createMessages(tuple[0][0], accountData),
-    bulkSize
-);
+const jsonXML = parser.parse(xml);
+const practiceTransfer = jsonXML.practiceTransfer;
+//console.log(for [key] in  practiceTransfer)
+const focus = [
+  ["accounts", "accounts.account"],
+  ["banks", "banks.bankDetails"],
+  ["contacts", "contacts.contact"],
+  ["company", "company"],
+  ["exercices", "exercices.exercice"],
+  ["immos", "immos.immobilisation"],
+  ["journals", "journals.journal"],
+  ["taxes", "taxes.vat"],
+];
 
-console.log(messagesBulks);
-const promises = messagesBulks.map(async (messagesBulk) => writeMessageBulk(messagesBulk))
-Promise.all(promises)
+console.log(Object.keys(practiceTransfer).sort((a, b) => a.localeCompare(b)));
 
-console.log("success", success)
-async function  writeMessageBulk(item){
-  //const command = `SAVE_ACCOUNT_LIST_BULK`;
 
-     const newMessage = await Message_store.create({
-      id: new ObjectId(),
-      stream_name: `pivotFile:command-${new ObjectId()}`,
-      type: "SAVE_ACCOUNT_LIST_BULK",
-      meta_data: {
-        user_id: 1, // get the message in the database
-        file_id: 1
-      },
-      data: { messages_bulk: item }
-    });
-
-    return newMessage
+for (let foc in focus) {
+  const interestingData = _get(practiceTransfer, focus[foc][1], undefined);
+  console.log(interestingData);
+  switch (focus[foc][0]) {
+    case "accounts":
+      const accounts = interestingData.map(adapters.account) as [any];
+      console.log('here \n', accounts)
+      console.log(typeof accounts)
+      console.log(Array.isArray(accounts))
+      accounts.map((account) => {
+        _once(() => console.log(account));
+        Account.create(...account);
+      });
+      break;
+    case "banks":
+      const banks = interestingData.map(adapters.bank);
+      banks.forEach((bank) => Bank.create(...bank));
+      break;
+    case "contacts":
+      const contacts = interestingData.map(adapters.contact);
+      banks.forEach((contact) => Contact.create(...contact));
+      break;
+    case "company":
+      const companies = interestingData.map(adapters.bank);
+      companies.forEach((company) => Company.create(...company));
+      break;
+    case "exercices":
+      const exercices = interestingData.map(adapters.financial_year);
+      exercices.forEach((fy) => Financial_Year.create(...fy));
+      break;
+    case "immos":
+      const immos = interestingData.map(adapters.capital_asset);
+      immos.forEach((immo) => Capital_Asset.create(...immo));
+      break;
+    case "journals":
+      const journals = interestingData.map(adapters.journal);
+      journals.forEach((journal) => Journal.create(...journal));
+      break;
+    case "taxes":
+      const taxes = interestingData.map(adapters.tax);
+      banks.forEach((tax_table) => Tax.create(...tax_table));
+      break;
+    default:
+      _once(() => console.log(foc));
+      break;
+  }
 }
-function createMessages(name:any, xmlData:any){
 
-   const isArrayXmlData =  Array.isArray(xmlData) ? xmlData : [xmlData];
-   return isArrayXmlData.map(xmlData =>{
-       const someId = new ObjectId();
-       const my_command = `save_${name}`;
-       const fileId = new ObjectId()
-       const newMessage = {
-        id:new ObjectId(),
-        stream_name:`${name}:command-${someId}`,
-        type:`save_${name}`,
-        meta_data: {
-            user_id: "1",
-            file_id: fileId,
-            origin_stream_name: `pivotFile:command-${fileId}`
-          },
-          data: {
-            [`${name}_id`]: someId,
-            [`parsed_xml_${name}`]: xmlData
-          }
-       }
-       return newMessage
-   })
-}
+// const accountData = _get(practiceTransfer, tuple[0][1] , undefined);
+
+// accountData.map(async account =>{
+
+// })
