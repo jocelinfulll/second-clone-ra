@@ -61,11 +61,12 @@ const capital_asset_table = (immo) => ({
 });
 
 const company_table = (company) => ({
+  legal_name: company.legalName,
   usage_name: company.usageName,
   siren: company.SIREN,
   website: company.webSite,
   person_type: company.personType,
-  business_type: company.businessType,
+  buisness_type: company.buisness_type,
   mono_branch: company.mono_branch,
 });
 

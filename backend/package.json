@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon --legacy-watch src/index.ts",
+    "start:server":"nodemon --legacy-watch src/server.ts",
     "xml":"nodemon --legacy-watch src/xml/index.ts"
   },
   "dependencies": {
