@@ -105,7 +105,7 @@ const financial_year_table = (financial_year) => ({
   file_id: new ObjectId(),
   object_id: financial_year.objectId,
   state: financial_year.state,
-  name: name,
+  name: financial_year.name,
   start_date: financial_year.startDate,
   end_date: financial_year.endDate,
 });
@@ -157,7 +157,7 @@ export const adapters = {
   capital_asset: capital_asset_table,
   company: company_table,
   contact: contact_table,
-  financial_year: generic_infos_table,
+  financial_year: financial_year_table,
   generic_infos: generic_infos_table,
   journal: journal_table,
   tax: tax_table,

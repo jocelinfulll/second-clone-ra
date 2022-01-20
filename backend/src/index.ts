@@ -13,14 +13,17 @@ import {
     Journal,
     Tax,
   } from "./models";
-
+import {saveJsonifyXmlToDb} from './xml/'
 
 (async()=>{
     await initDatabase()
    
-    const filename = 'littlexml.xml';
-    const pathXmlFile = path.join(__dirname, `../${filename}`);
+    const filename = 'coala.xml';
+    const pathXmlFile = path.join(__dirname, `../XML/${filename}`);
     const file = fs.readFileSync(pathXmlFile);
     const jsonifyXml = xmlToJson(file);
-    printJsonifyXml(jsonifyXml , 0, 5, true)
+    //printJsonifyXml(jsonifyXml , 0, 5, true)
+    saveJsonifyXmlToDb(jsonifyXml.practiceTransfer)
 })()
+
+
