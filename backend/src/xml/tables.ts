@@ -1,8 +1,5 @@
-import { ObjectId } from "mongodb";
-
 const account_table = (account) => ({
   object_id: account.objectID,
-  file_id: new ObjectId(),
   number: account.number,
   name: account.name,
   short_name: account.shortName,
@@ -19,7 +16,6 @@ const account_table = (account) => ({
 
 const bank_table = (bank) => ({
   object_id: bank.objectID,
-  file_id: new ObjectId(),
   name: bank.name,
   iban_code: bank.account,
   code_swift: bank.codeSWIFT,
@@ -34,7 +30,6 @@ const bank_table = (bank) => ({
 
 const capital_asset_table = (immo) => ({
   object_id: immo.objectID,
-  file_id: new ObjectId(),
   quantity: immo.quantity,
   main_component: immo.mainComponent,
   decomposed: immo.decomposed,
@@ -66,7 +61,6 @@ const capital_asset_table = (immo) => ({
 });
 
 const company_table = (company) => ({
-  file_id: new ObjectId(),
   usage_name: company.usageName,
   siren: company.SIREN,
   website: company.webSite,
@@ -77,7 +71,6 @@ const company_table = (company) => ({
 
 
 const contact_table = (contact) => ({
-  file_id: new ObjectId(),
   object_id: contact.objectId,
   is_associate: contact.isAssociate,
   last_name: contact.lastName,
@@ -102,7 +95,6 @@ const contact_table = (contact) => ({
 });
 
 const financial_year_table = (financial_year) => ({
-  file_id: new ObjectId(),
   object_id: financial_year.objectId,
   state: financial_year.state,
   name: financial_year.name,
@@ -111,7 +103,6 @@ const financial_year_table = (financial_year) => ({
 });
 
 const generic_infos_table = (generic_info) => ({
-  file_id: new ObjectId(),
   company_code: generic_info.companyCode,
   company_id: generic_info.companyId,
   company_name: generic_info.companyName,
@@ -131,7 +122,6 @@ const generic_infos_table = (generic_info) => ({
 
 const journal_table = (journal) => ({
   object_id: journal.objectID,
-  file_id: new ObjectId(),
   show_entry_reconciliation: journal.showEntryReconciliation,
   show_entry_analysis: journal.showEntryAnalysis,
   ref: journal.ref,
@@ -144,7 +134,6 @@ const journal_table = (journal) => ({
 });
 
 const tax_table = (tax) => ({
-  file_id: new ObjectId(),
   object_id: tax.objectID,
   vat_deductible: tax.vatDeductible,
   rate: tax.rate,
