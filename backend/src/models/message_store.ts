@@ -3,11 +3,11 @@ import mongoose, {Schema as schema} from 'mongoose';
 
 const messageStoreSchema = new schema(
     {   
-        id : { type: String, required: true },
-        stream_name: { type: String, required: true },
-        meta_data:{type: Object, required:true},
-        type:{type:String, required:true},
-        data:{type:Object, required:true},
+        id : { type: String, required: false },
+        stream_name: { type: String, required: false },
+        meta_data:{type: Object, required:false},
+        type:{type:String, required:false},
+        data:{type:Object, required:false},
     },
     {timestamps:true}
 )

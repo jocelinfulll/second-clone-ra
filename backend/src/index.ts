@@ -1,28 +1,26 @@
-require("dotenv").config();
-import express from "express";
-import morgan from 'morgan';
-import cors from 'cors';
-import {restRouter, graphqlRouter} from './router';
-import { initDatabase } from "./middleware/mongo.middleware";
+import fs from "fs";
+import path from 'path'
+import { initDatabase } from "./connectors/mongodb";
+import { xmlToJson } from './xml/parse';
+import { printJsonifyXml } from "./utils/printJsonifyXml";
+import {
+    Account,
+    Bank,
+    Contact,
+    Company,
+    Financial_Year,
+    Capital_Asset,
+    Journal,
+    Tax,
+  } from "./models";
 
-(async function() {
-    const app = express();
-    const port = process.env.PORT || 3000;
 
-    app.use(cors());
-    app.use(express.json());
-    app.use(morgan('tiny'));
-    //routes
-    app.use("/rest", restRouter);
-    app.use("/graphql", graphqlRouter);
-    //base route
-    app.get("/", (req, res) => {
-        res.send("ok")
-    });
-  
-    await initDatabase();
-
-    app.listen(port, () => {
-        console.log(`server started on port: ${port}`);
-    });
-})();
+(async()=>{
+    await initDatabase()
+   
+    const filename = 'littlexml.xml';
+    const pathXmlFile = path.join(__dirname, `../${filename}`);
+    const file = fs.readFileSync(pathXmlFile);
+    const jsonifyXml = xmlToJson(file);
+    printJsonifyXml(jsonifyXml , 0, 5, true)
+})()

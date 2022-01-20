@@ -2,8 +2,8 @@ import mongoose, {Schema as schema} from 'mongoose';
 
 const recoverySchema = new schema(
     { 
-        file_id:{ type: schema.Types.ObjectId, ref: 'File', required: true },
-        status:{ type: String, required: true},
+        file_id:{ type: schema.Types.ObjectId, ref: 'File', required: false },
+        status:{ type: String, required: false},
     },
     {timestamps: true}
 )

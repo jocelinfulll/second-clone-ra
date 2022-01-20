@@ -3,18 +3,18 @@ import mongoose, {Schema as schema} from 'mongoose';
 
 const bankSchema = new schema(
     { 
-        file_id:{ type: schema.Types.ObjectId, ref: 'File', required: true,  },
-        object_id:{type: String, required:true},
-        name:{type: String, required:true},
-        iban_code:{type: String, required:true},
-        code_swift:{type: String, required:true},
-        branch_code:{type: String, required:true},
-        bank_name:{type: String, required:true},
-        bank_code:{type: String, required:true},
-        account_type:{type: Number, required:true},
-        account_owner:{type: String, required:true},
-        account_number:{type: String, required:true},
-        account_key:{type: String, required:true},
+        file_id:{ type: schema.Types.ObjectId, ref: 'File', required: false,  },
+        object_id:{type: String, required:false},
+        name:{type: String, required:false},
+        iban_code:{type: String, required:false},
+        code_swift:{type: String, required:false},
+        branch_code:{type: String, required:false},
+        bank_name:{type: String, required:false},
+        bank_code:{type: String, required:false},
+        account_type:{type: Number, required:false},
+        account_owner:{type: String, required:false},
+        account_number:{type: String, required:false},
+        account_key:{type: String, required:false},
     },
     {timestamps: true}
 )

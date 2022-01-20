@@ -2,8 +2,8 @@ import mongoose, {Schema as schema} from 'mongoose';
 
 const userCredentialsSchema = new schema(
     { 
-        email:{type:String, required:true},
-        password_hash:{type:String, required:true}
+        email:{type:String, required:false},
+        password_hash:{type:String, required:false}
     },
     {timestamps: true}
 )

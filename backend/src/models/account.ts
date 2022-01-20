@@ -3,8 +3,8 @@ import mongoose, {Schema as schema} from 'mongoose';
 
 const accountSchema = new schema(
     { 
-        object_id:{ type: String, required: true },
-        file_id:{ type: schema.Types.ObjectId, ref: 'File', required: true,  },
+        object_id:{ type: String, required: false },
+        file_id:{ type: schema.Types.ObjectId, ref: 'File', required: false,  },
         name:{ type: String },
         number:{ type: String },
         short_name:{ type: String },
