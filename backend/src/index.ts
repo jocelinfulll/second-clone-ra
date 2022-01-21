@@ -1,36 +1,26 @@
 import fs from "fs";
 import path from 'path'
-import { initDatabase } from "./connectors/mongodb";
+import { File } from "./models"
 import { xmlToJson } from './xml/parse';
-import { File } from "./models";
-import { saveJsonifyXmlToDb } from './xml/'
+import { saveJsonifyXmlToDb } from './xml/';
+import { downloadFileFromS3 } from "./utils/fileS3";
 
-(async () => {
-    await initDatabase()
-   
-    const filename = 'coala.xml';
-    const pathXmlFile = path.join(__dirname, `../XML/${filename}`);
-    const file = fs.readFileSync(pathXmlFile);
-    const jsonifyXml = xmlToJson(file);
-    
-    const fileDb = await createFileDb();
-    const fileId = fileDb?._id.toString();
+export const writePivotFile = async (fileId) => {
+   try {
+      const fileDB = await File.findById(fileId);
 
-    if (fileId) {
-      console.log(fileId);
-      saveJsonifyXmlToDb(jsonifyXml.practiceTransfer, fileId)
-    } else {
-      console.log("File not created");
+      let filePath = fileDB["path"];
+      let fileName: string = fileDB["name"];
+
+      if (!filePath || !fileName) {
+        throw Error("Path/Name not found in file from DB");
+      }
+
+      const BodyXML = await downloadFileFromS3({fileName});
+      const parsedXML = xmlToJson(BodyXML);
+
+      saveJsonifyXmlToDb(parsedXML, fileId);
+    } catch(e) {
+        throw("File not found in DB");
     }
-})()
-
-
-function createFileDb() {
-  return File.create({
-    path: "path",
-    name: "name",
-    type: "type"
-  });
-}
-
-
+};

@@ -11,11 +11,18 @@ import {
     File as FileModel
 } from "../../../models"
 
+import { writePivotFile } from '../../../index';
+
 export const resolvers = {
-    Query:{
+    Query: {
         async getFileById(_parent, { id }) {
             const file = await FileModel.findById(id);
             return file;
+        },
+        async getFiles() {
+            const files = await FileModel.find({}, null, { sort: { _id : 'asc' }, limit: 40 })
+                .lean().exec();
+            return files;
         },
 
         async getAccountById(_parent, { id }) {
@@ -26,6 +33,11 @@ export const resolvers = {
             const account = await AccountModel.findOne({file_id: fileId});
             return account;
         },
+        async getAccounts() {
+            const accounts = await AccountModel.find({}, null, { sort: { _id : 'asc' }, limit: 40 })
+                .lean().exec();
+            return accounts;
+        },
 
         async getBankById(_parent, { id }) {
             const bank = await BankModel.findById(id);
@@ -35,6 +47,11 @@ export const resolvers = {
             console.log(fileId)
             const bank = await BankModel.findOne({file_id: fileId});
             return bank;
+        },
+        async getBanks() {
+            const banks = await BankModel.find({}, null, { sort: { _id : 'asc' }, limit: 40 })
+                .lean().exec();
+            return banks;
         },
 
         async getCompanyById(_parent, { id }) {
@@ -48,6 +65,11 @@ export const resolvers = {
             const company = await CompanyModel.findOne({file_id: fileId});
             return company;
         },
+        async getCompanies() {
+            const companies = await CompanyModel.find({}, null, { sort: { _id : 'asc' }, limit: 40 })
+                .lean().exec();
+            return companies;
+        },
 
         async getFinancialYearById(_parent, { id }) {
             const fy = await FinancialYearModel.findById(id);
@@ -56,6 +78,11 @@ export const resolvers = {
         async getFinancialYearByFileId(_parent, { fileId }) {
             const fy = await FinancialYearModel.findOne({file_id: fileId});
             return fy;
+        },
+        async getFinancialYears() {
+            const fys = await FinancialYearModel.find({}, null, { sort: { _id : 'asc' }, limit: 40 })
+                .lean().exec();
+            return fys;
         },
 
         async getJournalById(_parent, { id }) {
@@ -66,6 +93,11 @@ export const resolvers = {
             const journal = await JournalModel.findOne({file_id: fileId});
             return journal;
         },
+        async getJournals() {
+            const journals = await JournalModel.find({}, null, { sort: { _id : 'asc' }, limit: 40 })
+                .lean().exec();
+            return journals;
+        },
 
         async getTaxById(_parent, { id }) {
             const tax = await TaxModel.findById(id);
@@ -74,6 +106,11 @@ export const resolvers = {
         async getTaxByFileId(_parent, { fileId }) {
             const tax = await TaxModel.findOne({file_id: fileId});
             return tax;
+        },
+        async getTaxes() {
+            const taxes = await TaxModel.find({}, null, { sort: { _id : 'asc' }, limit: 40 })
+                .lean().exec();
+            return taxes;
         },
 
         async getCapitalAssetById(_parent, { id }) {
@@ -84,6 +121,11 @@ export const resolvers = {
             const ca = await CapitalAssetModel.findOne({file_id: fileId});
             return ca;
         },
+        async getCapitalAssets() {
+            const cas = await CapitalAssetModel.find({}, null, { sort: { _id : 'asc' }, limit: 40 })
+                .lean().exec();
+            return cas;
+        },
 
         async getContactById(_parent, { id }) {
             const contact = await ContactModel.findById(id);
@@ -92,6 +134,11 @@ export const resolvers = {
         async getContactByFileId(_parent, { fileId }) {
             const contact = await ContactModel.findOne({file_id: fileId});
             return contact;
+        },
+        async getContacts() {
+            const contacts = await ContactModel.find({}, null, { sort: { _id : 'asc' }, limit: 40 })
+                .lean().exec();
+            return contacts;
         },
 
         /*async getRecoveryById(_parent, { id }) {
@@ -102,6 +149,21 @@ export const resolvers = {
             const ca = await CapitalAssetModel.findOne({file_id: fileId});
             return ca;
         },*/
+    },
+
+    Mutation: {
+        async writeSavePivotFile(_parent, { input }) {
+            try {
+                const fileId = input.fileId;
+                await writePivotFile(fileId)
+                return input;
+            } catch(e) {
+                return {
+                    response: JSON.stringify(e)
+                };
+            }
+            
+        }
     },
 
     /* Object iDs ?*/

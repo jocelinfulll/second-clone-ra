@@ -4,7 +4,7 @@ import { schema } from './schema';
 import * as noSqlModels from '../../models'
 export const graphqlRouter = Router();
 
-graphqlRouter.use("/", graphqlHTTP({
+graphqlRouter.use("/graphql", graphqlHTTP({
     schema,
     graphiql:true,
     context:{

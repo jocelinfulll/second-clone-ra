@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 
 export const typeDefs = gql`
 
-    type Account{
+    type Account {
         id:ID!
         fileId:ID
         objectId:String
@@ -74,7 +74,7 @@ export const typeDefs = gql`
         createdAt:String
     }
 
-    type Contact{
+    type Contact {
         id:ID!
         fileID:ID
         objectId:String
@@ -101,7 +101,7 @@ export const typeDefs = gql`
         createdAt:String
     }
 
-    type Company{
+    type Company {
         id:ID!
         fileId:ID
         objectId:String
@@ -123,7 +123,7 @@ export const typeDefs = gql`
         createdAt: String
     }
 
-    type FinancialYear{
+    type FinancialYear {
         id:ID!
         fileId:ID
         objectId:String
@@ -134,7 +134,7 @@ export const typeDefs = gql`
         createdAt:String
     }
 
-    type Journal{
+    type Journal {
         id:ID!
         fileId:ID
         objectId:String
@@ -150,7 +150,7 @@ export const typeDefs = gql`
         createdAt:String
     }
 
-    type Tax  {
+    type Tax {
         id:ID!
         fileId:ID
         objectId:String
@@ -160,24 +160,45 @@ export const typeDefs = gql`
         createdAt:String
     }
 
-    type Query{
+    type Query {
         getFileById(id: String): File
+        getFiles: [File]
         getAccountById(id: String): Account
         getAccountByFileId(id: String): Account
+        getAccounts: [Account]
         getBankById(id: String): Bank
         getBankByFileId(fileId: String): Bank
+        getBanks: [Bank]
         getCompanyById(id: String): Company
         getCompanyByFileId(fileId: String): Company
+        getCompanies: [Company]
         getFinancialYearById(id: String): FinancialYear
         getFinancialYearByFileId(fileId: String): FinancialYear
+        getFinancialYears: [FinancialYear]
         getJournalById(id: String): Journal
         getJournalByFileId(fileId: String): Journal
+        getJournals: [Journal]
         getTaxById(id: String): Tax
         getTaxByFileId(fileId: String): Tax
+        getTaxes: [Tax]
         getCapitalAssetById(id: String): CapitalAsset
         getCapitalAssetByFileId(fileId: String): CapitalAsset
+        getCapitalAssets: [CapitalAsset]
         getContactById(id: String): Contact
         getContactByFileId(fileId: String): Contact
+        getContacts: [Contact]
+    }
+
+    input WriteSavePivotFileInputType {
+        fileId: String
+    }
+
+    type WriteSavePivotFileResponseType {
+        response: String
+    }
+
+    type Mutation {
+        writeSavePivotFile(input: WriteSavePivotFileInputType): WriteSavePivotFileResponseType
     }
 
 `

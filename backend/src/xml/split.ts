@@ -3,11 +3,6 @@ import fs from "fs";
 import path from "path";
 import smallUUID from 'short-uuid'
 
-
-
-
-
-
 export const splitter = (linesEnd=1,linesOffset=0, name="splited" ) =>{
     const filename = "littlexml.xml";
     const pathXmlFile = path.join(__dirname, `../../XML/${filename}`);
